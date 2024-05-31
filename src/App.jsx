@@ -1,9 +1,6 @@
-
+import { ContextProvider } from './Store/ActiveContext';
 import './App.css'
-import { createBrowserRouter, 
-  createRoutesFromElements,
-   Route, 
-   RouterProvider} from 'react-router-dom'
+import { createBrowserRouter, createRoutesFromElements, Route, RouterProvider} from 'react-router-dom'
 import { Root } from './Layout/Root';
 import {Home} from './Pages/Home'
 import { Destination } from './Pages/Destination';
@@ -12,9 +9,11 @@ import { Technology } from './Pages/Technology';
 import { Error } from './Pages/Error';
 
 function App() {
+ 
+
   const router = createBrowserRouter(
     createRoutesFromElements(<>
-       <Route path="/" element={<Root />}>
+      <Route path="/" element={<Root />}>
       <Route index element={<Home />} />
       <Route path='/destination' element={<Destination />} />
       <Route path="/crew" element={<Crew />} />
@@ -26,13 +25,13 @@ function App() {
   );
   
     return (
-      <>
+      <> 
+       <ContextProvider>
         <RouterProvider router={router}>
           {router}
         </RouterProvider>
+       </ContextProvider>
       </>
-    
-    
   )
 }
 

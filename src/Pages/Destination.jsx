@@ -1,30 +1,35 @@
 import { useState } from "react"
 import { DESTINATION } from "../DATA/data"
-
+import { useEffect } from "react"
+import Aos from "aos"
+import 'aos/dist/aos.css'
 export const Destination =() =>{
  
 const [destination, setdDestination] = useState('Moon')
 
 function changeclick(click){
   return setdDestination(click)}
+  useEffect(()=>{
+    Aos.init()
+  },[])
 
 return(
     
 <main id='Destination'>
-<div className="lg:pl-[90px] pb-4 lg:pb-10 pt-[14rem] lg:pt-28 flex justify-center lg:justify-start text-base lg:text-3xl leading-[19.2px] lg:leading-[33.6px] text-white gap-2 lg:gap-4 tracking-[2.7px] lg:tracking-[4.72px] items-center ">
+<div  data-aos="fade-up" data-aos-duration="1000" className="lg:pl-[90px] pb-4 lg:pb-6 pt-[14rem] lg:pt-28 flex justify-center lg:justify-start text-base lg:text-3xl leading-[19.2px] lg:leading-[33.6px] text-white gap-2 lg:gap-4 tracking-[2.7px] lg:tracking-[4.72px] items-center ">
         <h3 className=" text-bold">01</h3>
       <h4 className=" font-normal">PICK YOUR DESTINATION</h4>
       </div>
 <section className="flex flex-wrap lg:flex-nowrap items-center justify-center lg:justify-around">
    
-<div>
+<div data-aos="zoom-in-up" data-aos-duration="1000">
   <img className="DestinationMoons" src={DESTINATION[destination].img} alt="moon"  />
 </div> 
 
 
-<div>
+<div data-aos="zoom-in-up" data-aos-duration="1000">
 <menu className='flex justify-center lg:justify-start py-4 text-dark gap-4 text-sm lg:text-base font-normal leading-[16.8px] lg:leading[19.2px] tracking-[2.36px] lg:tracking-[2.7px]'>
-<span onClick={()=>changeclick('Moon')} className="">MOON</span> 
+<span onClick={()=>changeclick('Moon')} className={`${destination === "Moon"? 'active' : '' }`}>MOON</span> 
 
 <span onClick={()=>changeclick('Mars')}>MARS</span>
 

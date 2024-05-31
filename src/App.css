@@ -1,16 +1,17 @@
+body::-webkit-scrollbar{
+  display: none;
+}
+
 #HOME{
-  background-image: url(./assets/home/background-home-desktop.jpg);  
+  background-image: url(./assets/home/background-home-desktop.jpg); 
+  bottom: 76px;
   height: 100dvh;
   width: 100dvw;
   background-position: center;
   background-repeat: no-repeat;
-  margin-top: -4.7rem;
-  
-  /* -75.99px; */
 }
 
 nav ul li{color: #FFFFFF;
-  /* //font-family: Barlow Condensed; */
   font-size: 16px;
   font-weight: 400;
   line-height: 19px;
@@ -67,13 +68,18 @@ nav ul span{
     color: #D0D6F9;
   max-width: 500px;}
 
+ #hover:hover{background-color: #FFFFFF;
+  opacity: 10.36%;
+  padding: 50px;
+transition: 1s;
+position: relative;} 
+
   #hanburger{display: none;}
   
   /*  STOPED */
 
 
-li.active::after {
- 
+.active::after {
   content: '';
   width: 100%;
   display: block;
@@ -141,11 +147,11 @@ height:425px; width: 425px;
   #crew img{height: 494px;
     width: 514px;
   object-fit: contain;}
-  #crew menu span {
-    background: #FFFFFF;
-opacity:17.44%;
 
-  }
+  .offClickBackground {
+    background: #FFFFFF; 
+    opacity:17.44%;}
+
 #crew h1,p{
   font-family: 'Bellefair', serif;
 
@@ -179,12 +185,10 @@ opacity:17.44%;
 #nav ul li{display: none;
 }
 #HOME{
-  background-image: url(./assets/home/home-mobile.jpg);  
-height: 100dvh; 
-width: 100dvw;
- background-position: center;
-  background-repeat: no-repeat;
-  margin-top: -56px;
+  /* background-image: url(./assets/home/home-mobile.jpg);   */
+bottom: 56px;
+  background-position: center;
+  background-repeat: no-repeat; 
 }
   #Destination img{width: 170px;
     height: 170px;}
